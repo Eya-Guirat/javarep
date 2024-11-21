@@ -1,4 +1,6 @@
-public class Employe {
+import java.util.Objects;
+
+public class Employe implements Comparable<Employe> {
 
     private int id;
     private String nom;
@@ -11,10 +13,10 @@ public class Employe {
     }
 
 
-    public Employe(int id, String nom, String prenom, String departement, int grade) {
+    public Employe(int id, String prenom, String nom, String departement, int grade) {
         this.id = id;
-        this.nom = nom;
         this.prenom = prenom;
+        this.nom = nom;
         this.departement = departement;
         this.grade = grade;
     }
@@ -78,10 +80,15 @@ public class Employe {
     public String toString() {
         return "Employe{" +
                 "id=" + id +
-                ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
+                ", nom='" + nom + '\'' +
                 ", departement='" + departement + '\'' +
                 ", grade=" + grade +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employe o) {
+        return Integer.compare(this.id, o.id);
     }
 }
