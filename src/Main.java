@@ -24,7 +24,7 @@ public class Main {
         societe.displayEmploye();
 
 
-        //prosit 10
+
 
         DepartementHashSet gestionDepartements = new DepartementHashSet();
 
